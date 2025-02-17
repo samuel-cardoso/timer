@@ -1,5 +1,3 @@
-
-
 import { ButtonContainer, ButtonVariant } from "./Button.styles";
 
 interface ButtonProps {
