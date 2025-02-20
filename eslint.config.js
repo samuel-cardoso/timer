@@ -12,7 +12,7 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
-    },
+    },  
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
@@ -23,6 +23,11 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'no-duplicate-imports': ['error'], // Proíbe importações duplicadas
+      'quotes': ['error', 'double'], // Exige aspas simples. (o prettier formata com aspas duplas)
+      'no-mixed-operators': 'error', // Evita combinações perigosas de operadores.
+      'semi': ['error', 'always'], // Obriga ponto e vírgula no final.
+      '@typescript-eslint/no-unused-vars': ['error'], // Avisa sobre variáveis não usadas.
     },
   },
 )
