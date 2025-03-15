@@ -51,6 +51,10 @@ const BaseInput = styled.input`
 // Nesse caso, o BaseInput é um input com várias propriedades. O TaskInput e o MinutesAmountInput são inputs que herdam as propriedades do BaseInput pela passagem do styled(BaseInput).
 export const TaskInput = styled(BaseInput)`
   flex: 1;
+
+  &::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
 `;
 
 // Dessa forma, não precisamos repetir o background transparente em todos os inputs.
