@@ -67,3 +67,30 @@ export const HistoryList = styled.div`
     }
   }
 `;
+
+const STATUS_COLORS = {
+  yellow: "yellow-500",
+  green: "green-500",
+  red: "red-500",
+} as const;
+
+interface StatusProps {
+  // As cores que eu tenho disponíveis são as keys do meu objeto STATUS_COLORS.
+  // O typeof é necessário porque o typescript não consegue ler um objeto javascript, apenas a tipagem. 
+  statusColor: keyof typeof STATUS_COLORS;
+}
+
+export const Status = styled.span<StatusProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  // O before e o after são elementos que podemos colocar que ficarão dentro da tag, no começo ou no final.
+  &::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
+  }
+`;
