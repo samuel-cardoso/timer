@@ -87,6 +87,7 @@ export const Separator = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-right: 10px;
 `;
 
 export const StartCountdownButton = styled.button`
